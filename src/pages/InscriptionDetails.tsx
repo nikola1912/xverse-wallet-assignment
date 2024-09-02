@@ -26,19 +26,24 @@ const InscriptionDetails = () => {
     return <p className="mt-4 text-center">Loading...</p>;
   }
 
+  const isContentValid = inscription.content_type !== null;
+  const isContentImageType =
+    isContentValid && inscription.content_type.startsWith("image/");
+
   return (
     <div>
       <Header showBackButton title="Details" />
-      {inscription?.content_type.startsWith("image/") ? (
-        <img
-          src={`https://ord.xverse.app/content/${inscriptionId}`}
-          className="mx-auto mb-6 w-full max-w-md rounded-lg"
-        />
-      ) : (
-        <p className="bg-input mb-6 break-words rounded-lg p-3 text-sm">
-          {content}
-        </p>
-      )}
+      {isContentValid &&
+        (isContentImageType ? (
+          <img
+            src={`https://ord.xverse.app/content/${inscriptionId}`}
+            className="mx-auto mb-6 w-full max-w-md rounded-lg"
+          />
+        ) : (
+          <p className="bg-input mb-6 break-words rounded-lg p-3 text-sm">
+            {content}
+          </p>
+        ))}
       <h1 className="mb-4 font-semibold">Inscription {inscription?.number}</h1>
       <hr className="border-input mb-6 border-2" />
       <div className="mb-14">
