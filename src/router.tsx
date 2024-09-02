@@ -7,7 +7,7 @@ import InscriptionDetails from "./pages/InscriptionDetails";
 
 export enum ROUTES {
   inscriptionLookup = "/",
-  inscriptionDetails = "/:inscriptionId",
+  inscriptionDetails = "/:address/:inscriptionId",
 }
 
 export const router = createBrowserRouter([

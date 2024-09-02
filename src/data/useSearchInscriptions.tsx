@@ -45,6 +45,7 @@ const useSearchInscriptions = (): UseSearchInscriptionsResult => {
         setHasMore(offset + LIMIT < data.total);
       } catch (error) {
         console.error("Failed to fetch inscriptions:", error);
+
         setError("Unable to fetch results or no matching results.");
         setHasMore(false);
       } finally {
