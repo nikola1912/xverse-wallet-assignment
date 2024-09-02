@@ -1,6 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 
-import Layout from "./components/Layout";
+import Layout from "./components/ui/Layout";
 // import ErrorPage from "../pages/ErrorPage";
 import InscriptionLookup from "./pages/InscriptionLookup";
 import InscriptionDetails from "./pages/InscriptionDetails";
